@@ -1,38 +1,477 @@
-.App {
-  text-align: center;
+ /* App.css here */
+
+/* Main styling for the App component */
+ .App {
+   text-align: center;
+ }
+
+ /* Styling for the Header component */
+ .Header {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: flex-end;
+   ;
+   justify-content: flex-start;
+ 
+   flex-direction: column;
+
+ }
+
+ /* Styling for the logo of the App */
+ .App-logo {
+   height: 40vmin;
+   pointer-events: none;
+ }
+
+ /* Animation for the App logo for users without motion preferences */
+ @media (prefers-reduced-motion: no-preference) {
+   .App-logo {
+     animation: App-logo-spin infinite 20s linear;
+   }
+ }
+
+ /* Styling for the header of the App */
+ .App-header {
+   background-color: #282c34;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   font-size: calc(10px + 2vmin);
+   color: white;
+ }
+
+ /* Styling for the link inside the App */
+ .App-link {
+   color: #61dafb;
+ }
+
+ @keyframes App-logo-spin {
+   from {
+     transform: rotate(0deg);
+   }
+
+   to {
+     transform: rotate(360deg);
+   }
+ }
+
+ /* Styling for a generic header box */
+ .header-box {
+   position: relative;
+   background-color: #f1f1f1;
+   display: flex;
+   justify-content: flex-start;
+   /* justify-content: space-between; */
+   align-items: end;
+   padding: 20px;
+   margin: 20px 0;
+   border: 2px solid black;
+   /* Add border here */
+ }
+
+ /* Styling for a container holding multiple items, possibly in a shop */
+ .items-box {
+
+   /* display: grid; */
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+   grid-template-columns: repeat(4, 1fr);
+   /* create 4 columns of equal width */
+   grid-gap: 10px;
+   /* provides some gap between the grid items */
+   background-color: #f1f1f1;
+   padding: 20px;
+   margin: 20px 0;
+   border: 2px solid black;
+   /* Adds border here */
+ }
+
+ /* Styling for each individual item in the shop */
+ .shop-item {
+   border: 1px solid black;
+   
+   text-align: left;
+   /* Aligns text to the left */
+   height: auto;
+   width: 48%;
+ }
+
+/* A generic grid container with 2 equal columns */
+ .grid-container {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+  
+   grid-gap: 10px;
+  
+ }
+
+ /* Styling for a Cart overlay/modal */
+ .Cart {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
+   z-index: 1;
+
+ }
+
+ .Cart {
+   background-color: white;
+   border: 1px solid black;
+   border-radius: 4px;
+
+ }
+
+ /* Hides elements with the "hidden" attribute */
+ [hidden] {
+   display: none !important;
+ }
+
+ /* Flexbox container with vertical stacking of items */
+ .column-layout {
+   display: flex;
+   flex-direction: column;
+ }
+
+/* Flexbox container with vertical stacking of items */
+ .my-items-button {
+   color: #007BFF;
+   text-decoration: none;
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+   padding: 0;
+   font-size: inherit;
+   font-family: inherit;
+   text-decoration: none;
+
+   position: absolute;
+   right: 10%;
+ }
+
+
+ .my-items-button:hover {
+   text-decoration: underline;
+ }
+
+/* Styling for the "change-password-button" */
+ .change-password-button {
+   color: #007BFF;
+   text-decoration: none;
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+   padding: 0;
+   font-size: inherit;
+   font-family: inherit;
+  
+   position: absolute;
+   right: 15%;
+
+ }
+
+ .change-password-button:hover {
+   text-decoration: underline;
+ }
+
+ .logout-button {
+   color: #007BFF;
+   text-decoration: none;
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+   padding: 0;
+   font-size: inherit;
+   font-family: inherit;
+   position: absolute;
+   right: 5%;
+
+ }
+
+ .logout-button:hover {
+   text-decoration: underline;
+ }
+
+
+ .cart-button {
+   color: #007BFF;
+   text-decoration: none;
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+   padding: 0;
+   font-size: inherit;
+   font-family: inherit;
+   position: absolute;
+   right: 1%;
+   top: 50%;
+
+ }
+
+ .cart-button:hover {
+   text-decoration: underline;
+ }
+
+ /* .search-bar { */
+ /* margin-left: 20px; Adjust this value according to your preference */
+ /* } */
+
+
+ .search-bar {
+   margin-left: 100%;
+ 
+   flex-grow: 1;
+
+ }
+
+ /* Styling for a disabled "search-bar" */
+ .search-bar:disabled {
+   background-color: #e0e0e0;
+   cursor: not-allowed;
+ }
+
+
+
+
+ /* Mobile view (phones) */
+ @media screen and (max-width: 765px) {
+   .Header {
+     flex-direction: column;
+     padding: 10px 0;
+   }
+
+   /* Adjustments for multiple components in mobile view to ensure responsiveness */
+   .username-display,
+   .logout-button,
+   .my-items-button,
+   .change-password-button,
+   .cart-button,
+   .site-logo,
+   .search-bar,
+
+   .cart {
+     width: 100%;
+    
+     position: static;
+ 
+     margin-top: 10px;
+     
+   }
+
+
+
+
+
+   .username-display {
+     /* align-self: flex-start; */
+     margin-bottom: 10px;
+     text-align: right;
+     margin-top: 0%;
+     /* margin-left: 50%; */
+     padding-left: 10px;
+   }
+
+   .site-logo {
+     position: static;
+     height: auto;
+     left: 0;
+     top: 0;
+     padding: 10px;
+   }
+
+   .logout-button {
+     text-align: right;
+   }
+
+   .my-items-button {
+     text-align: right;
+
+   }
+
+   .change-password-button {
+     text-align: right;
+   }
+
+   .search-bar {
+     width: 100%;
+     /* Ensure the search bar is full width */
+     /* margin: 10px 0;   */
+     /* Add some margin to space it out from other elements */
+     /* position: static;  */
+   }
+
+   .cart {
+     width: 100%;
+     text-align: right;
+     margin-top: 10px;
+     right: 1%;
+
+   }
+ }
+
+
+
+ .username-display {
+   position: absolute;
+  
+   top: 10%;
+   right: 10%;
+   color: black;
+
+   font-weight: bold;
+
+
+ }
+
+
+ .shop-button {
+
+   font-size: 16px;
+   margin-top: 20px;
+ 
+   cursor: pointer;
+   display: inline-block;
+  
+   transition: background-color 0.3s;
+  
+ }
+
+ .shop-button:hover {
+   background-color: #0056b3;
+ }
+
+ button[onclick="handlePopulateDB()"] {
+   background-color: red !important;
+   z-index: 1000;
+   position: relative;
+ }
+
+
+ .pagination-container {
+   display: flex;
+   justify-content: center;
+   margin-top: 20px;
+ }
+
+ .page-number {
+   width: 30px;
+   height: 30px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 0 5px;
+   cursor: pointer;
+   border: 1px solid black;
+   transition: background-color 0.3s;
+ }
+
+ .page-number:hover {
+   background-color: lightgray;
+ }
+
+ .page-number.active {
+   background-color: blue;
+   color: white;
+ }
+
+ .site-logo {
+   position: absolute;
+   right: 0;
+   top: 10%;
+
+   left: 1%;
+   display: flex;
+
+   border: 2px solid black;
+  
+   padding: 10px 10px;
+   
+   width: 120px;
+   height: 40px;
+   padding: 10px 20px;
+   
+   align-items: center;
+   /* Center align items vertically */
+   justify-content: space-between;
+   /* Space between the image and button */
+
+ }
+
+ .marketplace-button {
+   color: #007BFF;
+   /* This makes the text link blue colored */
+   text-decoration: none;
+   /* To remove the underline */
+   background-color: transparent;
+   /* No background for the button */
+   border: none;
+   cursor: pointer;
+   padding: 0;
+   font-size: inherit;
+   font-family: inherit;
+   left: 80%;
+ }
+
+ .marketplace-button:hover {
+   text-decoration: underline;
+ }
+
+
+ .centered-box {
+   height: 50%;
+   width: 50%;
+   /*  adjust this value based on design needs */
+   max-width: 600px;
+   /* To make sure the box isn't too wide on large screens */
+   max-height: 600px;
+   padding: 20px;
+   background-color: #f1f1f1;
+   border: 1px solid black;
+   margin: 0 auto;
+   /* To center the box horizontally */
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   /* Optional: adds a little shadow for depth */
+ }
+
+
+ .signup-button {
+  color: #007BFF; /* This makes the text link blue colored */
+  text-decoration: none; /* To remove the underline */
+  background-color: transparent; /* No background for the button */
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  /* margin-right: 10px; Add some margin to separate the buttons if they're next to each other */
+  position: absolute;
+  right: 1%;
+  top: 65%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.signin-button {
+  color: #007BFF; /* This makes the text link blue colored */
+  text-decoration: none; /* To remove the underline */
+  background-color: transparent; /* No background for the button */
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  /* margin-right: 10px; Add some margin to separate the buttons if they're next to each other */
+  position: absolute;
+  right: 25%;
+  top: 65%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.signup-button:hover, .signin-button:hover {
+  text-decoration: underline; /* Underline on hover for emphasis */
 }

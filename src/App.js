@@ -1,23 +1,36 @@
+/* App.js here */
+
 import logo from './logo.svg';
 import './App.css';
+import Header from './Header';
+// import LandingPage from './LandingPage.html';
+
+
+import Shop from './Shop';
+import Signup from './Signup';
+import Login from './Login';
+import {  Route, Routes } from 'react-router-dom';
+import Inventory from './myitems';
+import Account from './Account';
+
+const API_URL = "http://localhost:8000/"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <Routes>
+          <Route path='/Signup' element={<Signup />} />
+          <Route path='/Shop' element={<Shop/>} />
+          <Route path='/myitems' element={<Inventory />} />
+          <Route path='/' element={<Shop />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/Account" element={<Account />} />
+        </Routes>
+        </div>
+
+ 
+      
     </div>
   );
 }
